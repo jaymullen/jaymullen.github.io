@@ -130,7 +130,7 @@
         meetingConfig.apiKey = API_KEY;
         var joinUrl =
           testTool.getCurrentDomain() +
-          "/meeting.html?" +
+          "/zoom-test/meeting.html?" +
           testTool.serialize(meetingConfig);
         $(element).attr("link", joinUrl);
         var $temp = $("<input>");
@@ -163,7 +163,7 @@
           meetingConfig.apiKey = API_KEY;
           var joinUrl =
             testTool.getCurrentDomain() +
-            "/meeting.html?" +
+            "/zoom-test/meeting.html?" +
             testTool.serialize(meetingConfig);
           testTool.createZoomNode("websdk-iframe", joinUrl);
         },
