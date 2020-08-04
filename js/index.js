@@ -82,35 +82,35 @@
   });
 
   // click join meeting button
-  document
-    .getElementById("join_meeting")
-    .addEventListener("click", function (e) {
-      e.preventDefault();
-      var meetingConfig = testTool.getMeetingConfig();
-      if (!meetingConfig.mn || !meetingConfig.name) {
-        alert("Meeting number or username is empty");
-        return false;
-      }
+  // document
+  //   .getElementById("join_meeting")
+  //   .addEventListener("click", function (e) {
+  //     e.preventDefault();
+  //     var meetingConfig = testTool.getMeetingConfig();
+  //     if (!meetingConfig.mn || !meetingConfig.name) {
+  //       alert("Meeting number or username is empty");
+  //       return false;
+  //     }
 
       
-      testTool.setCookie("meeting_number", meetingConfig.mn);
-      testTool.setCookie("meeting_pwd", meetingConfig.pwd);
+  //     testTool.setCookie("meeting_number", meetingConfig.mn);
+  //     testTool.setCookie("meeting_pwd", meetingConfig.pwd);
 
-      var signature = ZoomMtg.generateSignature({
-        meetingNumber: meetingConfig.mn,
-        apiKey: API_KEY,
-        apiSecret: API_SECRET,
-        role: meetingConfig.role,
-        success: function (res) {
-          console.log(res.result);
-          meetingConfig.signature = res.result;
-          meetingConfig.apiKey = API_KEY;
-          var joinUrl = "/meeting.html?" + testTool.serialize(meetingConfig);
-          console.log(joinUrl);
-          window.open(joinUrl, "_blank");
-        },
-      });
-    });
+  //     var signature = ZoomMtg.generateSignature({
+  //       meetingNumber: meetingConfig.mn,
+  //       apiKey: API_KEY,
+  //       apiSecret: API_SECRET,
+  //       role: meetingConfig.role,
+  //       success: function (res) {
+  //         console.log(res.result);
+  //         meetingConfig.signature = res.result;
+  //         meetingConfig.apiKey = API_KEY;
+  //         var joinUrl = "/meeting.html?" + testTool.serialize(meetingConfig);
+  //         console.log(joinUrl);
+  //         window.open(joinUrl, "_blank");
+  //       },
+  //     });
+  //   });
 
   // click copy jon link button
   window.copyJoinLink = function (element) {
