@@ -23,7 +23,7 @@
       );
     })(),
     passWord: tmpArgs.pwd,
-    leaveUrl: "/zoom-test/index.html",
+    leaveUrl: "/zoom-test/meeting-end.html",
     role: parseInt(tmpArgs.role, 10),
     userEmail: (function () {
       try {
